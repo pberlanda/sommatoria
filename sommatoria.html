@@ -14,7 +14,10 @@
         var importo = parseFloat(document.getElementById("importo").value);        
         var importo_totale = parseFloat(document.getElementById("importo_totale").value);
 
+        // aggiorna il totale
         document.getElementById("importo_totale").value = importo_totale + importo;
+
+        // imposta a 0 l'importo per una nuova immissione
         document.getElementById("importo").value = "0";
 
         // impedisco il ricaricamento della pagina altrimenti il totale non viene visualizzato aggiornato
