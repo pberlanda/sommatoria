@@ -15,6 +15,7 @@
         var importo_totale = parseFloat(document.getElementById("importo_totale").value);
 
         document.getElementById("importo_totale").value = importo_totale + importo;
+        document.getElementById("importo").value = "0";
 
         // impedisco il ricaricamento della pagina altrimenti il totale non viene visualizzato aggiornato
         // metodo selvaggio
@@ -28,7 +29,10 @@
     <form onsubmit="calcolaTotale()">
         <label for="importo">Importo</label>
         <input id="importo" type="number" name="importo" required>
+        
         <input type="button" value="calcola il totale" onclick="calcolaTotale()">
+        
+        <!-- devo aggiungere l'attributi value="0" altrimenti javascript non riesce ad aggiornare l'elemento html -->
         <span><h2>Totale</h2><input id="importo_totale" type="number" readonly value="0"></span>
     
     </form>
