@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somamtoria</title>
+</head>
+<script>
+    function calcolaTotale(){
+
+        // impedisco il ricaricamento della pagina altrimenti il totale non viene visualizzato aggiornato
+        // metodo civile
+        if (event) event.preventDefault();
+
+        var importo = parseFloat(document.getElementById("importo").value);        
+        var importo_totale = parseFloat(document.getElementById("importo_totale").value);
+
+        document.getElementById("importo_totale").value = importo_totale + importo;
+
+        // impedisco il ricaricamento della pagina altrimenti il totale non viene visualizzato aggiornato
+        // metodo selvaggio
+        return 1;
+
+    }
+</script>
+<body>
+    <h1>Sommatoria</h1>
+    <p>Programma javascript che chiede di inserire un valore, ad esempio un prezzo, e lo aggiunge a un totale</p>
+    <form onsubmit="calcolaTotale()">
+        <label for="importo">Importo</label>
+        <input id="importo" type="number" name="importo" required>
+        <input type="button" value="calcola il totale" onclick="calcolaTotale()">
+        <span><h2>Totale</h2><input id="importo_totale" type="number" readonly value="0"></span>
+    
+    </form>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <title>Sommatoria</title>
+    <script type="text/javascript">
+        function calcola() {
+            // evita il ricaricamento della pagina (metodo civile)
+            //if (event) event.preventDefault();
+
+            // acquisisce il valore dell'incasso
+            var incasso = parseFloat(document.getElementById("casella").value);
+
+            // incrementa la sommatoria
+            var somma = parseFloat(document.getElementById("totale").value) + incasso;
+
+            // visualizza il totale parziale
+            document.getElementById("totale").value = somma.toFixed(2);
+
+            // svuota la casella dell'incasso per l'input di un nuovo valore
+            document.getElementById("casella").value = "";
+
+            // evita il ricaricamento della pagina (metodo selvaggio)
+            return 1;
+        }
+    </script>
+</head>
+    <body>
+        <h2>Sommatoria</h2>
+        <span>esempio preso da Syntax A pag 437. Nel programma originale c'è un bug che ho corretto. Bisogna impedire il refresh della pagina altrimenti il totale non si vede aggiornato....</span>
+
+        <form id="somma">
+            <p>
+            Incasso: <input type="number" id="casella">
+            <input id="button1" type="button" value="Aggiungi"
+            onclick="calcola()">
+            </p>
+            Totale: <input type="text" id="totale" value="0">
+        </form>
+    </body>
+</html>
